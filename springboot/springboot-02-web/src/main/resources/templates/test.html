@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--所有的html 元素都可以被 thymeleaf 替换接管： th:元素名-->
+
+<!--
+    用th:text不会解析html，
+    用th:utext会解析html，在页面中显示相应的样式
+-->
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div>
+
+<!-- 定义一条水平线 -->
+<hr>
+
+<h1 th:each="user : ${users}" th:text="${user}"></h1>
+<!--<h1 th:each="user : ${users}">[[ ${user} ]]</h1>-->
+
+</body>
+</html>

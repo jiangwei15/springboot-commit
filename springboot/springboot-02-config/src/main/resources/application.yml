@@ -1,0 +1,26 @@
+# 在我们这配置文件中能配置的东西，都存在一个固有的规律
+# XXXAutoConfiguration：默认值   XXXProperties  和  配置文件绑定，我们就可以使用自定义的配置了！
+
+# 可以通过  debug: true 来查看，哪些自动配置类生效，哪些没有生效！
+
+
+server:
+  port: 8081
+spring:
+  profiles:
+    active: test
+
+---
+server:
+  port: 8082
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+server:
+  port: 8083
+spring:
+  config:
+    activate:
+      on-profile: test
